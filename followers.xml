@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="component" method="upgrade">
+	<name>com_followers</name>
+	<author>Daniel Eliasson daniel@stilero.com</author>
+	<creationDate>2015-sep-06</creationDate>
+	<copyright>Copyright (c) 2015-sep-06 Stilero Webdesign (http://www.stilero.com). All rights reserved.</copyright>
+	<authorEmail>joomla@stilero.com</authorEmail>
+	<authorUrl>www.stilero.com</authorUrl>
+	<version>1.0</version>
+	<license>GPLv2</license>
+	<description>Followers Joomla component</description>
+	<!--
+        <install>
+            <sql>
+                <file driver="mysql" charset="utf8">sql/install.mysql.sql</file>
+            </sql>
+	</install>
+	<uninstall>
+            <sql>
+                <file driver="mysql" charset="utf8">sql/uninstall.mysql.sql</file>
+            </sql>
+	</uninstall>
+        -->
+        <!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+        <!--
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>followers.php</filename>
+                <filename>controller.php</filename>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+        -->
+        <!--    
+        <media destination="followers">
+            <folder>assets/js</folder>
+            <folder>assets/images</folder>
+            <folder>assets/css</folder>
+        </media>
+        -->
+        <!--
+	<languages folder="language">
+            <language tag="en-GB">site/language/en-GB.com_followers.ini</language>
+            <language tag="en-GB">site/language/en-GB.com_followers.sys.ini</language>
+        </languages>
+        -->
+        <config>
+            <fields name="params" addfieldpath="/plugins/content/followers/elements">
+                    <fieldset name="settings" label="COM_FOLLOWERS_SETTINGS">
+                            <field name="custom_field" type="customfieldname" default="" label="COM_FOLLOWERS_PARAMNAME" description="COM_FOLLOWERS_PARAMNAME_DESC"/>
+                            <field name="param_name" type="text"  default="" label="COM_FOLLOWERS_PARAMNAME" description="COM_FOLLOWERS_PARAMNAME_DESC"/>
+                            <field name="param_name2" type="radio" default="1" label="COM_FOLLOWERS_PARAMNAME2" description="COM_FOLLOWERS_PARAMNAME2_DESC">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                            </field>
+                            <field type="spacer" default="COM_FOLLOWERS_SPACER"/>
+                    </fieldset>
+                    <fieldset name="other" label="COM_FOLLOWERS_FIELDSET">
+                            <field name="param_name" type="text"  default="" label="COM_FOLLOWERS_PARAMNAME" description="COM_FOLLOWERS_PARAMNAME_DESC"/>
+                            <field name="param_name2" type="radio" default="1" label="COM_FOLLOWERS_PARAMNAME2" description="COM_FOLLOWERS_PARAMNAME2_DESC">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                            </field>
+                            <field type="spacer" default="COM_FOLLOWERS_SPACER"/>
+                    </fieldset>
+            </fields>
+        </config>
+	<administration>
+            <!-- Administration Menu Section -->
+           <menu img="../media/followers/images/menu1.png" link="index.php?option=com_followers">followers</menu>
+           <submenu>
+                <menu img="../media/followers/images/menu1.png" link="option=com_followers&amp;view=view2">Menu2</menu>
+            </submenu>
+            <!-- Administration Main File Copy Section -->
+            <!-- Note the folder attribute: This attribute describes the folder
+                    to copy FROM in the package to install therefore files copied
+                    in this section are copied from /admin/ in the package -->
+            <files folder="admin">
+                    <!-- Admin Main File Copy Section -->
+                    <filename>index.html</filename>
+                    <filename>followers.php</filename>
+                    <filename>controller.php</filename>
+                    <folder>views</folder>
+                    <folder>controllers</folder>
+                    <folder>helpers</folder>
+                    <folder>assets</folder>
+                    <folder>models</folder>
+            </files>
+            <languages folder="language">
+	       <language tag="en-GB">admin/language/en-GB.com_followers.ini</language>
+               <language tag="en-GB">admin/language/en-GB.com_followers.ini</language>
+	    </languages>
+	</administration>
+</extension>
